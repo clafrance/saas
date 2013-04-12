@@ -19,7 +19,7 @@ class MoviesController < ApplicationController
       session[:ratings] = @all_ratings
     end
 
-    if params[:commit] == "Refresh"
+    if params[:commit] == "Refresh" && !params[:ratings].nil?
       session[:ratings] = params[:ratings].keys
     else #if session[:ratings]
       redirect_to = true
