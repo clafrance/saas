@@ -21,7 +21,7 @@ class MoviesController < ApplicationController
 
     if params[:commit] == "Refresh"
       session[:ratings] = params[:ratings].keys
-    elsif session[:ratings]
+    else #if session[:ratings]
       redirect_to = true
       params[:ratings] = {}
       session[:ratings].each do |e|
