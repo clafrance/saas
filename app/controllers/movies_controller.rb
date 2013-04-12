@@ -23,10 +23,11 @@ class MoviesController < ApplicationController
       session[:ratings] = params[:ratings].keys
     else #if session[:ratings]
       redirect_to = true
-      params[:ratings] = {}
-      session[:ratings].each do |e|
-        params[:ratings][e] = 1
-      end
+      params[:ratings] = session[:ratings]
+      #params[:ratings] = {}
+      #session[:ratings].each do |r|
+      #  params[:ratings][r] = 1
+      #end
     end
 
     if params[:orderby]
